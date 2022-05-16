@@ -14,7 +14,7 @@ btChange.addEventListener("click", function () {
 
     // replace all ,;.!?:`'" with a space
     phrases = phrases.map(function (phrase) {
-      return phrase.replace(/[,;.!?:`'"]/g, " ");
+      return phrase.replace(/[,;.!?:`'"]/g, "");
     });
 
     // transform each word to first letter in upper case
