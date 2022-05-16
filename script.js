@@ -1,10 +1,9 @@
 const btChange = document.querySelector("#btChange");
-const originalText = document.querySelector("#originalText");
-const result = document.querySelector("#result");
+const originalText = document.getElementById("originalText");
+const result = document.getElementById("result");
 
 btChange.addEventListener("click", function () {
   let value = originalText.value.toLowerCase();
-  console.log(originalText);
 
   // trim value
   value = value.trim();
@@ -26,8 +25,6 @@ btChange.addEventListener("click", function () {
       });
       return words.join(" ");
     });
-
-    debugger;
 
     // if the word starts with a number, add a space before it
     phrases = phrases.map(function (phrase) {
@@ -52,7 +49,11 @@ btChange.addEventListener("click", function () {
       return words.join(" ");
     });
 
-    var final = phrases.join(" ").replace("<br><br>1)", "1");
+    var final = phrases.join(" ").replace("<br><br>1", "1");
+
     result.innerHTML = final;
+
+    // select all text and copy
+    navigator.clipboard.writeText(final);
   }
 });
