@@ -13,6 +13,11 @@ btChange.addEventListener("click", function () {
     // transform each word to first letter in upper case
     let phrases = value.split("\n");
 
+    // replace all ,;.!?:`'" with a space
+    phrases = phrases.map(function (phrase) {
+      return phrase.replace(/[,;.!?:`'"]/g, " ");
+    });
+
     // transform each word to first letter in upper case
     phrases = phrases.map(function (phrase) {
       let words = phrase.split(" ");
@@ -23,11 +28,6 @@ btChange.addEventListener("click", function () {
     });
 
     debugger;
-
-    // replace all ,.!? with a space
-    phrases = phrases.map(function (phrase) {
-      return phrase.replace(/[,]/g, " ");
-    });
 
     // if the word starts with a number, add a space before it
     phrases = phrases.map(function (phrase) {
@@ -44,7 +44,7 @@ btChange.addEventListener("click", function () {
           word.charAt(0) === "8" ||
           word.charAt(0) === "9"
         ) {
-          return "<br><br>" + word;
+          return "<br><br>" + word + ")";
         } else {
           return word;
         }
