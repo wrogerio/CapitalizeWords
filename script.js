@@ -49,7 +49,8 @@ btChange.addEventListener("click", function () {
       return words.join(" ");
     });
 
-    var final = phrases.join(" ").replace("<br><br>1", "1");
+    var final = phrases.join(" ").replace("<br><br>1", "1").replace(/  /g, " ");
+    console.log(final);
 
     result.innerHTML = final;
 
