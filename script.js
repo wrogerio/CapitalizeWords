@@ -52,6 +52,7 @@ btChange.addEventListener("click", function () {
       return words.join(" ");
     });
 
-    result.innerHTML = phrases.join(" ");
+    var final = phrases.join(" ").replace("<br><br>1)", "1");
+    result.innerHTML = final;
   }
 });
